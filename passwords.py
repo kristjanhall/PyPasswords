@@ -8,17 +8,24 @@
 import sys
 import random
 
+def getDictLength():
+	with open("dict.txt") as f:
+		for i, l in enumerate(f):
+			pass
+
+	return i
+
 def generateLineNumbers(num):
-	return random.sample(range(1, 241820), num)
+	length = getDictLength()
+	return random.sample(range(1, length), num)
 
 
 def pickWords(numbers):
 	words = []
-	fp = open("dict.txt")
-	for i, word in enumerate(fp):
-		if i in numbers:
-			words.append(word.rstrip().replace("-", ""))
-	fp.close()
+	with open("dict.txt") as fp:
+		for i, word in enumerate(fp):
+			if i in numbers:
+				words.append(word.rstrip().replace("-", ""))
 
 	return words
 
