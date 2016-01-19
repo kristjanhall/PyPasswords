@@ -1,3 +1,10 @@
+#	Kristján Hall 2016
+#
+#	passphrase generator using three dictionary files
+#	to form a sentance like structured passphrases
+#
+#
+
 import random
 import sys
 
@@ -55,9 +62,8 @@ class passphrase:
 def main():
 	pp = passphrase()
 	password =pp.makePassPhrase()
-	print("\n{0}".format("=" * len(password)))
-	print(password)
-	print("{0}\n".format("=" * len(password)))
+	print("\nYour password is")
+	print("{0}\n{1}\n".format("=" * len(password), password))
 
 
 if __name__ == "__main__":
